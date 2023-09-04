@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,15 +22,15 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Blender中尽可能将三角面转换为四边面（数学优化）">
 <meta property="og:url" content="http://example.com/2023/09/04/how-to-use-Tris-to-Quads-Ex/index.html">
-<meta property="og:site_name" content="Fire Theft">
+<meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Blender有一个功能，可以将三角面变成四边面。这会考虑边缘的长度来选择要溶解的边缘。这本身就很方便，但有时我想尽可能地将三角形脸变成方形脸。在这里，我们介绍一个通过数学优化来实现它的附加组件。 具体例子尝试下面的网格。  如果执行普通的“三角面转四边面”，则会如下所示。  角上有三角形。 然而，如果运行这次介绍的附加组件，则会如下所示。  所有三角面都完美转变成四边面。 安装方法安装PULP">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.staticaly.com/gh/Firetheft/tuchuang@main/img/%E5%BE%85%E5%A4%84%E7%90%86.png">
 <meta property="og:image" content="https://cdn.staticaly.com/gh/Firetheft/tuchuang@main/img/%E5%AE%98%E6%96%B9%E7%BB%93%E6%9E%9C.png">
 <meta property="og:image" content="https://cdn.staticaly.com/gh/Firetheft/tuchuang@main/img/%E6%8F%92%E4%BB%B6%E7%BB%93%E6%9E%9C.png">
-<meta property="article:published_time" content="2023-09-04T12:22:53.000Z">
-<meta property="article:modified_time" content="2023-09-04T12:28:32.837Z">
-<meta property="article:author" content="盗火创意">
+<meta property="article:published_time" content="2023-09-04T15:52:03.000Z">
+<meta property="article:modified_time" content="2023-09-04T15:53:52.637Z">
+<meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Blender冷知识">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.staticaly.com/gh/Firetheft/tuchuang@main/img/%E5%BE%85%E5%A4%84%E7%90%86.png">
@@ -78,9 +78,9 @@
     
     <script id="hexo-configurations">
     let Global = window.Global || {};
-    Global.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"};
-    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Fire Theft","subtitle":{"text":["“遇到我是你的福气”","“因为这里有很多冷门Blender知识”"],"hitokoto":{"enable":true,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"8.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"Rise","artist":"Epic Music","url":"http://music.163.com/song/media/outer/url?id=28283137.mp3","cover":"https://cdn.staticaly.com/gh/Firetheft/tuchuang@main/img/109951165091749637.jpg"},{"name":"Inevitable Destiny","artist":"Epic Music","url":"http://music.163.com/song/media/outer/url?id=402070053.mp3","cover":"https://cdn.staticaly.com/gh/Firetheft/tuchuang@main/img/1426066581780628.jpg"},{"name":"From the Ashes Reborn","artist":"Epic Music","url":"http://music.163.com/song/media/outer/url?id=32320961.mp3","cover":"https://cdn.staticaly.com/gh/Firetheft/tuchuang@main/img/2938994582898777.jpg"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.4.4","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
-    Global.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    Global.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Fire Theft","subtitle":{"text":["“遇到我是你的福气”","“因为这里有很多冷门Blender知识”"],"hitokoto":{"enable":true,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"8.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null,"fa-solid fa-envelope":"mailto:disambo@163.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"Rise","artist":"Epic Music","url":"http://music.163.com/song/media/outer/url?id=28283137.mp3","cover":"https://cdn.staticaly.com/gh/Firetheft/tuchuang@main/img/109951165091749637.jpg"},{"name":"Inevitable Destiny","artist":"Epic Music","url":"http://music.163.com/song/media/outer/url?id=402070053.mp3","cover":"https://cdn.staticaly.com/gh/Firetheft/tuchuang@main/img/1426066581780628.jpg"},{"name":"From the Ashes Reborn","artist":"Epic Music","url":"http://music.163.com/song/media/outer/url?id=32320961.mp3","cover":"https://cdn.staticaly.com/gh/Firetheft/tuchuang@main/img/2938994582898777.jpg"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.4.4","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    Global.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
     Global.data_config = {"masonry":false};
   </script>
     
@@ -155,7 +155,7 @@
                                         
                                             <i class="fa-regular fa-house"></i>
                                         
-                                        首页
+                                        HOME
                                     
                                 </a>
                                 <!-- Submenu -->
@@ -187,7 +187,7 @@
                                 
                                     <i class="fa-regular fa-house"></i>
                                 
-                                首页
+                                HOME
                             
                         </a>
                     </li>
@@ -239,16 +239,16 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-09-04 20:22:53</span>
-        <span class="mobile">2023-09-04 20:22:53</span>
-        <span class="hover-info">创建</span>
+        <span class="desktop">2023-09-04 23:52:03</span>
+        <span class="mobile">2023-09-04 23:52:03</span>
+        <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-09-04 20:28:32</span>
-            <span class="mobile">2023-09-04 20:28:32</span>
-            <span class="hover-info">更新</span>
+            <span class="desktop">2023-09-04 23:53:52</span>
+            <span class="mobile">2023-09-04 23:53:52</span>
+            <span class="hover-info">Updated</span>
         </span>
     
 
@@ -335,33 +335,35 @@
 <h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a><em>用法</em></h2><ul>
 <li>选择目标对象并进入编辑模式。<br>选择感兴趣的区域，然后从面菜单中选择“Tris to Quads Ex”。</li>
 <li>它只会在选定的区域进行溶解。如果您想定位全部，请按A选择。但需要注意的是面数越多需要计算的时间越长。</li>
+<li></li>
 </ul>
-
+<hr>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=32320961&auto=1&height=66"></iframe>
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> 在Blender中尽可能将三角面转换为四边面（数学优化）</li>
-        <li><strong>作者:</strong> 盗火创意</li>
-        <li><strong>创建于
-                :</strong> 2023-09-04 20:22:53</li>
+        <li><strong>Title:</strong> 在Blender中尽可能将三角面转换为四边面（数学优化）</li>
+        <li><strong>Author:</strong> 盗火创意</li>
+        <li><strong>Created at
+                :</strong> 2023-09-04 23:52:03</li>
         
             <li>
-                <strong>更新于
-                    :</strong> 2023-09-04 20:28:32
+                <strong>Updated at
+                    :</strong> 2023-09-04 23:53:52
             </li>
         
         <li>
-            <strong>链接:</strong> https://firetheft.github.io/2023/09/04/how-to-use-Tris-to-Quads-Ex/
+            <strong>Link:</strong> https://firetheft.github.io/2023/09/04/how-to-use-Tris-to-Quads-Ex/
         </li>
         <li>
             <strong>
-                版权声明:
+                License:
             </strong>
             
-            本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 进行许可。
+            This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
             
 
         </li>
@@ -394,7 +396,7 @@
                         >
                             <span class="title flex justify-center items-center">
                                 <span class="post-nav-title-item">Hello World</span>
-                                <span class="post-nav-item">下一篇</span>
+                                <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-right"></i>
@@ -411,7 +413,7 @@
                 <div class="comments-container pjax">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fa-solid fa-comments"></i>&nbsp;评论
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
     </div>
     
 
@@ -457,7 +459,7 @@
         <div class="toc-content-container">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <div class="toc-title">此页目录</div>
+        <div class="toc-title">On this page</div>
         <div class="page-title">在Blender中尽可能将三角面转换为四边面（数学优化）</div>
         <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E4%BE%8B%E5%AD%90"><span class="nav-text">具体例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95"><span class="nav-text">安装方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%B3%95"><span class="nav-text">用法</span></a></li></ol>
 
@@ -494,26 +496,26 @@
             <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
                 
                     <span id="busuanzi_container_site_uv" class="lg:!block">
-                        <span class="text-sm">访问人数</span>
+                        <span class="text-sm">VISITOR COUNT</span>
                         <span id="busuanzi_value_site_uv"></span>
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv" class="lg:!block">
-                        <span class="text-sm">总访问量</span>
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
                         <span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
-            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
-            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.4.4</a></span>
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.4.4</a></span>
         </div>
         
         
             <div>
-                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
             </div>
         
         
