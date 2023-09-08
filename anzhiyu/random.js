@@ -1,0 +1,1 @@
+var posts=["2023/09/04/hello-world/","2023/09/04/how-to-use-Tris-to-Quads-Ex/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
