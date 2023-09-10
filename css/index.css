@@ -19934,7 +19934,7 @@ html.hide-aside .layout > div:first-child {
 }
 
 /* 移动端样式（屏幕宽度小于某个值时） */
-@media (max-width: 1440px) { /* 你可以根据需要调整最大宽度 */
+@media (max-width: 768px) { /* 你可以根据需要调整最大宽度 */
   #about-page .author-box .author-tag-right,
   #about-page .author-box .author-tag-left {
     display: none; /* 在移动端隐藏 */
@@ -20186,7 +20186,7 @@ body:has(#sidebar-menus.open) #he-plugin-simple {
   z-index: 104;
   left: 95px !important;
   opacity: 1;
-  display: block;
+  display: none;
   transition: 0.3s;
 }
 
@@ -20288,19 +20288,7 @@ body:has(.post-bg) #he-plugin-simple .s-sticker div {
   background-color: var(--anzhiyu-blue-hover) !important;
 }
 
-@media screen and (max-width: 1400px) {
-  #he-plugin-simple {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 1400px) and (max-width: 1690px) {
-  #he-plugin-simple {
-    left: 262px !important;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1400px)  {
+@media screen and (max-width: 1690px) {
   #he-plugin-simple {
     display: none;
   }
@@ -21302,9 +21290,9 @@ body:has(#console.show) #nav-music .aplayer .aplayer-lrc .aplayer-lrc-contents {
   }
   body:has(#console.show) #nav-music .aplayer.aplayer-withlrc .aplayer-info::after {
     position: absolute;
-    content: "iPhone";
-    top: -20px;
-    left: 0;
+    content: "网易云音乐";
+    top: -310px;
+    right: 0;
     color: #b5b8bc;
   }
   body:has(#console.show) #nav-music .aplayer .aplayer-info .aplayer-music {
@@ -21313,8 +21301,9 @@ body:has(#console.show) #nav-music .aplayer .aplayer-lrc .aplayer-lrc-contents {
     left: 0;
   }
   body:has(#console.show) #nav-music .aplayer.aplayer-withlrc .aplayer-lrc {
-    height: 25px;
+    height: 300px;
     text-align: left;
+    top: -260px;
   }
 
   body:has(#console.show) #nav-music .aplayer .aplayer-lrc p.aplayer-lrc-current {
@@ -21341,7 +21330,7 @@ body:has(#console.show) #nav-music .aplayer .aplayer-lrc .aplayer-lrc-contents {
     color: var(--anzhiyu-white);
     left: 50%;
     transform: translateX(-50%);
-    top: 15px;
+    top: 25px;
     position: absolute;
     width: 100%;
     padding: 0;
