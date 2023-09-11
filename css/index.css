@@ -2777,7 +2777,7 @@ a:hover {
 #site-name,
 #aside-content .author-info__name,
 #aside-content .author-info__description {
-  font-family: PingFang SC, 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
+  font-family: 光良酒干杯体, PingFang SC, 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
 }
 .is-center {
   text-align: center;
@@ -3479,7 +3479,7 @@ figure.highlight pre .javascript .function {
   height: 100%;
   vertical-align: top;
   text-align: center;
-  font-family: PingFang SC, 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
+  font-family: 光良酒干杯体, PingFang SC, 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
 }
 @media screen and (max-width: 768px) {
   .error404 #error-wrap .error-content .error-info {
@@ -9989,6 +9989,7 @@ h1.page-title + .tag-cloud-list {
   line-height: 1;
   font-weight: bold;
   margin-bottom: 8px;
+  font-family: "光良酒干杯体";
 }
 .banners-title-small {
   font-size: 12px;
@@ -12648,6 +12649,7 @@ h1.page-title + .tag-cloud-list {
   padding: 0em 0.8em 0em 1em;
   height: 35px;
   line-height: 35px;
+  font-family: "光良酒干杯体";
   -webkit-transition: color 0s !important;
   -moz-transition: color 0s !important;
   -o-transition: color 0s !important;
@@ -12938,6 +12940,7 @@ h1.page-title + .tag-cloud-list {
 }
 #menus > div.menus_items a {
   font-weight: bold;
+  font-family: "光良酒干杯体";
 }
 #menus .menus_item .menus_item_child .site-page.child.faa-parent.animated-hover .anzhiyu-icon-fan.faa-tada {
   -webkit-animation: rotate 1.6s linear infinite;
@@ -18184,11 +18187,14 @@ p.p.right {
 span.p.small,
 p.p.small {
   font-size: var(--global-font-size);
+  font-family: "光良酒干杯体";
 }
 span.p.large,
 p.p.large {
   font-size: 2.5rem;
+  font-weight: 700;
   line-height: 1.4;
+  font-family: "光良酒干杯体";
 }
 span.p.huge,
 p.p.huge {
@@ -19939,6 +19945,30 @@ html.hide-aside .layout > div:first-child {
   #about-page .author-box .author-tag-left {
     display: none; /* 在移动端隐藏 */
   }
+}
+
+/* 添加字体 */
+@font-face {
+  font-family: "阿里妈妈数黑体 Bold";font-weight: 700;src: url("//at.alicdn.com/wf/webfont/LCULKRo3Nqhl/JuTDB5sfsK6H.woff2") format("woff2"),
+  url("//at.alicdn.com/wf/webfont/LCULKRo3Nqhl/7QFhv9B9K7Yw.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "阿里妈妈刀隶体 Regular";font-weight: 400;src: url("//at.alicdn.com/wf/webfont/LCULKRo3Nqhl/0Y3ER6O9V9ok.woff2") format("woff2"),
+  url("//at.alicdn.com/wf/webfont/LCULKRo3Nqhl/KOE99ZIFO7g6.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "阿里妈妈东方大楷 Regular";font-weight: 400;src: url("//at.alicdn.com/wf/webfont/LCULKRo3Nqhl/F6fioyF5BDJg.woff2") format("woff2"),
+  url("//at.alicdn.com/wf/webfont/LCULKRo3Nqhl/2J6RzI785C3Y.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "光良酒干杯体";font-weight: 700;src: url("/fonts/光良酒干杯体.ttf")format("truetype");
+  font-display: swap;
 }
 #aside-content .card-widget#card-wechat {
   background: #57bd6a;
@@ -22703,7 +22733,7 @@ a.categoryButton {
   transition: all 0.8s cubic-bezier(0.39, 0.575, 0.565, 1);
   transform: scale(1);
   overflow: hidden;
-  font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei;
+  font-family: 光良酒干杯体,PingFang SC, Hiragino Sans GB, Microsoft YaHei;
 }
 .categoryButtonText {
   padding-left: 21px;
