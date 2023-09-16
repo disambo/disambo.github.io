@@ -103,7 +103,7 @@ sup {
 
 img {
   border-style: none;
-  border-radius: 8px;
+  border-radius: 0px;
   max-width: 100%;
   transition: all 0.2s ease 0s;
   -webkit-user-drag: none; /* WebKit */
@@ -353,20 +353,24 @@ hr:before,
   border-radius: 0;
 }
 .list-beauty,
-.category-lists ul {
+.category-lists ul,
+#algolia-search .search-dialog .ais-Hits-list {
   list-style: none;
 }
 .list-beauty li,
-.category-lists ul li {
+.category-lists ul li,
+#algolia-search .search-dialog .ais-Hits-list li {
   position: relative;
   padding: 0.12em 0.4em 0.12em 1.4em;
 }
 .list-beauty li:hover:before,
-.category-lists ul li:hover:before {
+.category-lists ul li:hover:before,
+#algolia-search .search-dialog .ais-Hits-list li:hover:before {
   border-color: var(--pseudo-hover);
 }
 .list-beauty li:before,
-.category-lists ul li:before {
+.category-lists ul li:before,
+#algolia-search .search-dialog .ais-Hits-list li:before {
   position: absolute;
   top: 0.67em;
   left: 0;
@@ -2852,7 +2856,7 @@ blockquote > :last-child {
 }
 #single_top {
   padding: 1.875rem 1.5rem 0;
-  max-width: 1400px;
+  max-width: 1600px;
   width: 100%;
   margin: 0 auto;
 }
@@ -5670,7 +5674,7 @@ body[data-type='about'] #web_bg {
   margin: 0 -8px;
 }
 .blenderaddons-item .blenderaddons-item-content .blenderaddons-item-content-item {
-  width: calc(25% - 12px);
+  width: calc(20% - 12px);
   border-radius: 12px;
   border: var(--style-border-always);
   overflow: hidden;
@@ -5723,7 +5727,7 @@ body[data-type='about'] #web_bg {
 .blenderaddons-item .blenderaddons-item-content .blenderaddons-item-content-item .blenderaddons-item-content-item-description {
   line-height: 20px;
   color: var(--anzhiyu-secondtext);
-  height: 60px;
+  height: 90px;
   display: -webkit-box;
   overflow: hidden;
   -webkit-line-clamp: 3;
@@ -5764,10 +5768,15 @@ body[data-type='about'] #web_bg {
   -webkit-align-items: center;
   align-items: center;
 }
+.blenderaddons-item .blenderaddons-item-content .blenderaddons-item-content-item iten.sketchfab_embed_code {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
 .blenderaddons-item .blenderaddons-item-content .blenderaddons-item-content-item img.blenderaddons-item-content-item-image {
-  object-fit: contain;
-  height: 95%;
-  width: 95%;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 .blenderaddons-item .blenderaddons-item-content .blenderaddons-item-content-item .blenderaddons-item-content-item-toolbar {
   display: -webkit-box;
@@ -5790,17 +5799,20 @@ body[data-type='about'] #web_bg {
 }
 .more-link {
   text-decoration: none;
-  color: #fff;
-  background-color: #02161e;
+  color: var(--text-highlight-color);
+  background-color: var(--anzhiyu-card-bg);
+  -webkit-box-shadow: var(--anzhiyu-shadow-border);
+  box-shadow: var(--anzhiyu-shadow-border);
   padding: 5px 10px;
   border-radius: 30px;
+  border: var(--style-border-always);
   margin-left: 0px;
   font-size: 14px;
   font-family: "光良酒干杯体", sans-serif;
 }
 .more-link:hover {
-  background-color: #b3b9bc;
-  color: #fff;
+  background-color: var(--anzhiyu-main);
+  color: var(--text-highlight-color);
 }
 body[data-type="blenderaddons"] #web_bg {
   background: var(--anzhiyu-background);
@@ -7400,7 +7412,7 @@ body[data-type="link"] #page .page-title {
 #home_top {
   margin: 0 auto 0;
   padding: 0px 1.5rem 0px;
-  max-width: 1400px;
+  max-width: 1600px;
   width: 100%;
   -webkit-animation: slide-in 0.6s 0.1s backwards;
   -moz-animation: slide-in 0.6s 0.1s backwards;
@@ -7784,7 +7796,7 @@ body[data-type="music"] .s-sticker div {
 body:has(#console.show) #nav-music {
   display: none !important;
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1600px) {
   body #anMusic-page #anMusicSwitching,
   body #anMusic-page #anMusicRefreshBtn,
   body #anMusic-page #anMusicBtnGetSong {
@@ -10382,7 +10394,7 @@ h1.page-title + .tag-cloud-list {
   -ms-flex-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  max-width: 1400px;
+  max-width: 1600px;
   width: 100%;
   margin: 0 auto;
   -webkit-box-lines: multiple;
@@ -10976,8 +10988,8 @@ h1.page-title + .tag-cloud-list {
 #page-header #post-info {
   position: absolute;
   top: 0;
-  left: calc((100% - 1400px + 3rem) / 2);
-  width: calc(100% - (100% - 1400px + 3rem));
+  left: calc((100% - 1600px + 3rem) / 2);
+  width: calc(100% - (100% - 1600px + 3rem));
   height: 100%;
   display: -webkit-box;
   display: -moz-box;
@@ -11026,7 +11038,7 @@ h1.page-title + .tag-cloud-list {
     will-change: transform;
   }
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1600px) {
   #page-header #post-info {
     padding: 0 3.5rem;
     width: 100%;
@@ -11390,7 +11402,7 @@ h1.page-title + .tag-cloud-list {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  padding: 0 calc((100% - 1400px + 3rem) / 2);
+  padding: 0 calc((100% - 1600px + 3rem) / 2);
   width: 100%;
   height: 60px;
   opacity: 1;
@@ -11405,7 +11417,7 @@ h1.page-title + .tag-cloud-list {
   outline: 1px solid var(--anzhiyu-none);
 }
 #nav i {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 @media screen and (max-width: 768px) {
@@ -12229,7 +12241,7 @@ h1.page-title + .tag-cloud-list {
   padding-left: 0px;
 }
 #nav-group {
-  max-width: 1400px;
+  max-width: 1600px;
   width: 100%;
   display: -webkit-box;
   display: -moz-box;
@@ -12252,9 +12264,9 @@ h1.page-title + .tag-cloud-list {
   display: none;
 }
 #center-console + label {
-  --icon-size: 1.375rem;
+  --icon-size: 1.5rem;
   position: relative;
-  right: 0;
+  right: 5px;
   top: 0;
   bottom: 0;
   height: var(--icon-size);
@@ -12265,7 +12277,7 @@ h1.page-title + .tag-cloud-list {
   -o-transition: 1s;
   -ms-transition: 1s;
   transition: 1s;
-  margin-left: 1rem;
+  margin-left: 1.5rem;
 }
 #center-console + label:hover i.left {
   width: calc(var(--icon-size) / 2.5);
@@ -12507,14 +12519,14 @@ h1.page-title + .tag-cloud-list {
   transition: 0.3s;
 }
 #page-header #nav #nav-right > div {
-  margin-left: 1rem;
+  margin-left: 0.75rem;
   padding: 0;
 }
 .nav-button {
   cursor: pointer;
 }
 #nav #menus {
-  padding: 0 calc((100% - 1400px + 3rem) / 2);
+  padding: 0 calc((100% - 1600px + 3rem) / 2);
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -13203,7 +13215,7 @@ h1.page-title + .tag-cloud-list {
   -ms-transition: 0.3s;
   transition: 0.3s;
   letter-spacing: normal;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   padding: 0 5px;
   line-height: 2rem;
   -webkit-transition: color 0s;
@@ -20011,7 +20023,7 @@ div#category {
 /* 宽屏适配 */
 .page .layout,
 .post .layout {
-  max-width: 1400px;
+  max-width: 1600px;
 }
 
 .card-widget.card-clock {
@@ -20372,6 +20384,10 @@ a.catalog-more:hover {
 }
 
 /*和风天气 */
+#he-plugin-simple #weather-view-he {
+  display: none !important;
+}
+
 #he-plugin-simple {
   z-index: 92;
   transition: 0.3s;
@@ -20497,7 +20513,7 @@ body:has(.post-bg) #he-plugin-simple .s-sticker div {
   background-color: var(--anzhiyu-blue-hover) !important;
 }
 
-@media screen and (max-width: 1690px) {
+@media screen and (max-width: 1830px) {
   #he-plugin-simple {
     display: none;
   }
@@ -22095,10 +22111,10 @@ body[data-type="essay"] #page .author-content-item .card-content .banner-button-
   align-items: center;
   height: 50px;
   width: 100%;
-  max-width: calc(1400px - 3rem);
+  max-width: calc(1600px - 3rem);
   animation: slide-in .6s 0s backwards;
 }
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1600px) {
   #bbTimeList {
     max-width: calc(100% - 3rem);
     animation: slide-in 0.6s 0s backwards;
@@ -27096,3 +27112,272 @@ div#runtime {
   transform: translateY(-100%);
 }
 
+.search-dialog {
+  position: fixed;
+  top: 5rem;
+  left: 50%;
+  z-index: 1001;
+  display: none;
+  margin-left: -18.75rem;
+  padding: 1.25rem;
+  width: 37.5rem;
+  border-radius: 8px;
+  background: var(--search-bg);
+  border-radius: 12px;
+  -webkit-box-shadow: var(--anzhiyu-shadow-lightblack);
+  box-shadow: var(--anzhiyu-shadow-lightblack);
+  background: var(--anzhiyu-card-bg);
+  border: var(--style-border);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+@media screen and (max-width: 768px) {
+  .search-dialog {
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 !important;
+  }
+}
+@media screen and (max-height: 680px) {
+  .search-dialog {
+    top: 2rem;
+  }
+}
+@media screen and (max-height: 580px) {
+  .search-dialog {
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 !important;
+  }
+}
+.search-dialog hr {
+  margin: 20px auto;
+}
+.search-dialog .search-nav {
+  margin: 0 0 14px;
+  color: #425aef;
+  font-size: 1.4em;
+  line-height: 1;
+}
+.search-dialog .search-nav .search-dialog-title {
+  margin-right: 10px;
+}
+.search-dialog .search-nav .search-close-button {
+  float: right;
+  color: #858585;
+  -webkit-transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+.search-dialog .search-nav .search-close-button:hover {
+  color: #425aef;
+}
+#search-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  background: rgba(0,0,0,0.6);
+}
+#algolia-search .search-dialog .ais-SearchBox input {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  outline: none;
+  border: var(--style-border);
+  border-radius: var(--anzhiyu-radius);
+  background: var(--anzhiyu-secondbg);
+  color: var(--search-input-color);
+}
+#algolia-search .search-dialog .ais-SearchBox input:focus {
+  border: var(--style-border-hover);
+}
+#algolia-search .search-dialog .search-dialog-title {
+  font-weight: 700;
+  color: var(--anzhiyu-main);
+}
+#algolia-search .search-dialog .ais-Hits-list {
+  margin: 0;
+  padding: 0;
+}
+#algolia-search .search-dialog .ais-Hits-list .ais-Hits-item:hover {
+  background: var(--anzhiyu-main);
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#algolia-search .search-dialog .ais-Hits-list .ais-Hits-item:hover a {
+  color: var(--anzhiyu-white);
+}
+#algolia-search .search-dialog .ais-Hits-list mark {
+  background: transparent;
+  color: #f47466;
+  font-weight: bold;
+}
+#algolia-search .search-dialog .algolia-hit-item-content {
+  margin: 0 0 8px;
+  word-break: break-all;
+}
+#algolia-search .search-dialog .ais-Pagination {
+  margin: 20px 0 0;
+  padding: 0;
+  text-align: center;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item {
+  display: inline;
+  margin: 0 4px;
+  padding: 0;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item .ais-Pagination-link {
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item--selected a {
+  background: #425aef;
+  color: #eee;
+  cursor: default;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item--disabled {
+  visibility: hidden;
+}
+#algolia-search .search-dialog .algolia-logo {
+  padding-top: 2px;
+  width: 80px;
+  height: 30px;
+}
+#algolia-search .search-dialog #algolia-hits {
+  overflow-y: scroll;
+  min-height: 20px;
+}
+#algolia-search .search-dialog #algolia-hits .tag-list {
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  border: var(--style-border-always);
+  cursor: pointer;
+}
+#algolia-search .search-dialog #algolia-info div {
+  display: inline;
+}
+#algolia-search .search-dialog #algolia-info .algolia-poweredBy {
+  float: right;
+}
+#algolia-search #search-mask {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: var(--anzhiyu-maskbg);
+}
+#algolia-search .search-dialog {
+  border-radius: 12px;
+  -webkit-box-shadow: var(--anzhiyu-shadow-lightblack);
+  box-shadow: var(--anzhiyu-shadow-lightblack);
+  background: var(--anzhiyu-card-bg);
+  border: var(--style-border);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+#algolia-search .search-dialog .ais-Pagination .ais-Pagination-item--selected a {
+  border-radius: 4px;
+  background: var(--anzhiyu-main);
+  color: var(--anzhiyu-white);
+}
+#algolia-search .search-dialog:hover {
+  border: var(--style-border-hover);
+  -webkit-box-shadow: var(--anzhiyu-shadow-theme);
+  box-shadow: var(--anzhiyu-shadow-theme);
+}
+@media screen and (max-width: 768px) {
+  #algolia-search .search-dialog:hover {
+    border: var(--style-border);
+  }
+}
+#algolia-search .list-beauty li,
+#algolia-search .category-lists ul li,
+#algolia-search .search-dialog .ais-Hits-list li {
+  padding: 0;
+}
+#algolia-search .list-beauty li:before,
+#algolia-search .category-lists ul li:before,
+#algolia-search .search-dialog .ais-Hits-list li:before {
+  display: none;
+}
+#algolia-search .list-beauty li,
+#algolia-search .category-lists ul li,
+#algolia-search .search-dialog .ais-Hits-list li {
+  border-radius: 8px;
+  border: var(--style-border);
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+#algolia-search .search-dialog .ais-Hits-list a {
+  color: var(--search-result-title);
+  display: block;
+  font-weight: 600;
+  padding: 5px 10px;
+  width: 100%;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+#algolia-search .search-dialog .ais-Hits-list .search-result-tags a {
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  border: var(--style-border);
+  display: inline;
+}
+#algolia-search .ais-SearchBox-loadingIndicator {
+  display: none;
+}

@@ -1,1 +1,1 @@
-var posts=["2023/09/04/hello-world/","2023/09/10/how-to-use-Tris-to-Quads-Ex/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
+var posts=["2023/09/10/how-to-use-Tris-to-Quads-Ex -02/","2023/09/10/how-to-use-Tris-to-Quads-Ex -03/","2023/09/10/how-to-use-Tris-to-Quads-Ex -04/","2023/09/10/how-to-use-Tris-to-Quads-Ex -05/","2023/09/10/how-to-use-Tris-to-Quads-Ex -06/","2023/09/10/how-to-use-Tris-to-Quads-Ex/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
