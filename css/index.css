@@ -2571,7 +2571,7 @@ i.anzhiyu-icon-hashtag {
   --anzhiyu-pink: #ff7c7c;
   --anzhiyu-green: #57bd6a;
   --anzhiyu-fontcolor: #363636;
-  --anzhiyu-background: #f7f9fe;
+  --anzhiyu-background: #f2f2f2;
   --anzhiyu-reverse: #000;
   --anzhiyu-maskbg: rgba(255,255,255,0.6);
   --anzhiyu-maskbgdeep: rgba(255,255,255,0.85);
@@ -4559,7 +4559,7 @@ body[data-type='about'] #web_bg {
 }
 .author-content-item.comic-content {
   width: 39%;
-  min-height: 300px;
+  min-height: 360px;
   overflow: hidden;
 }
 .author-content-item.comic-content .comic-box {
@@ -11502,7 +11502,7 @@ h1.page-title + .tag-cloud-list {
   content: "";
 }
 #nav .menus_items .menus_item:hover .menus_item_child {
-  border: var(--style-border-hover);
+  border: none;
   -webkit-box-shadow: var(--anzhiyu-shadow-main);
   box-shadow: var(--anzhiyu-shadow-main);
   opacity: 1;
@@ -11547,7 +11547,7 @@ h1.page-title + .tag-cloud-list {
   -ms-transition: 0.2s;
   transition: 0.2s;
   background-color: var(--anzhiyu-card-bg);
-  border-radius: 50px;
+  border-radius: 12px;
   right: auto;
   left: auto;
   padding: 6px 4px;
@@ -11732,7 +11732,7 @@ h1.page-title + .tag-cloud-list {
   -o-animation-duration: 20s;
   -ms-animation-duration: 20s;
   animation-duration: 20s;
-  fill: #f7f9fe;
+  fill: #f2f2f2;
 }
 [data-theme="dark"] .parallax > use:nth-child(1) {
   fill: rgba(24,23,29,0.784);
@@ -11744,7 +11744,7 @@ h1.page-title + .tag-cloud-list {
   fill: rgba(24,23,29,0.243);
 }
 [data-theme="dark"] .parallax > use:nth-child(4) {
-  fill: #000;
+  fill: #111014;
 }
 #post-firstinfo {
   text-align: left;
@@ -13068,8 +13068,8 @@ h1.page-title + .tag-cloud-list {
   }
 }
 .back-menu-list-groups .back-menu-list .back-menu-item .back-menu-item-icon {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   border-radius: 24px;
   background: var(--anzhiyu-secondbg);
 }
