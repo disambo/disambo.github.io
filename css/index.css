@@ -7677,7 +7677,7 @@ body[data-type="link"] #page .page-title {
     display: box;
     display: flex;
     height: auto;
-    width: 49%;
+    width: calc(50% - 8px);
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     -webkit-box-orient: vertical;
