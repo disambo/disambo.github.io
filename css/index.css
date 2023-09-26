@@ -5702,7 +5702,7 @@ body[data-type='about'] #web_bg {
 .blenderaddons-item .blenderaddons-item-content .blenderaddons-item-content-item .blenderaddons-item-content-item-name {
   font-size: 18px;
   font-weight: bold;
-  line-height: 1;
+  line-height: 1.2;
   margin-bottom: 8px;
   white-space: nowrap;
   overflow: hidden;
