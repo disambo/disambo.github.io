@@ -18874,8 +18874,7 @@ p.p.gray {
   width: 1.5em;
 }
 #article-container .tabs > .nav-tabs > .tab.active {
-  border: var(--style-border-hover-always);
-  background: var(--anzhiyu-background);
+  background: #b9b9b9;
   border-radius: 8px;
   cursor: default;
 }
